@@ -18,8 +18,8 @@ export default {
       vm.fullHeight = window.innerHeight;
       if (vm.fullWidth > 765) {
         this.rwdHeight.height = "";
-      }else{
-        this.rwdHeight.height = "200px";
+      } else {
+        this.rwdHeight.height = "0px";
       }
     };
   },

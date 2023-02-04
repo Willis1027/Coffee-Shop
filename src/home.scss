@@ -42,7 +42,7 @@ header {
     }
   }
   nav {
-    margin-right: 100px;
+    margin-right: 80px;
     width: 400px;
     ul {
       display: flex;
@@ -57,10 +57,21 @@ header {
         font-size: 20px;
         a {
           text-decoration: none;
-          color: black;
+          color: white;
+          @include phone {
+            color: #3c2a21;
+          }
         }
         .cart-shop-icon {
           color: white;
+          @include phone {
+            color: #3c2a21;
+          }
+        }
+        @include phone {
+          width: 100px;
+          text-align: center;
+          letter-spacing: 1px;
         }
       }
     }
@@ -72,9 +83,125 @@ header {
       position: absolute;
       top: 80px;
       width: 100%;
-      background-color: aquamarine;
       transition: all 0.5s;
       overflow: hidden;
+      border-bottom: #3c2a21 2px solid;
+      background-color: white;
+    }
+  }
+}
+
+.home {
+  width: 100%;
+  height: 100vh;
+  background-image: url("./image/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .container {
+    width: 400px;
+    position: relative;
+    top: 110px;
+    left: 100px;
+    @include phone {
+      position: static;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .slogan {
+      width: 400px;
+      text-transform: uppercase;
+      font-size: 50px;
+      font-weight: 600;
+      line-height: 80px;
+      color: white;
+      word-wrap: break-word;
+      @include phone {
+        width: 80%;
+        line-height: 3rem;
+        font-size: 32px;
+        text-align: center;
+      }
+    }
+    .btn {
+      margin-top: 20px;
+      text-align: center;
+      background-color: #ad8e70;
+      color: white;
+      width: 180px;
+      padding: 15px 15px;
+      font-size: 20px;
+    }
+  }
+  @include phone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.heading {
+  text-align: center;
+  font-size: 32px;
+  color: #ad8e70;
+  margin: 50px 0;
+  @include phone {
+    font-size: 28px;
+  }
+}
+
+.about {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #eddbc7 50%, white 50%);
+  padding: 80px 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include phone {
+    padding: 60px 40px;
+  }
+  .row {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    @include phone {
+      display: block;
+    }
+    h1 {
+      @include phone {
+        margin-top: 15px;
+        text-align: center;
+      }
+    }
+    img {
+      width: 60%;
+      @include phone {
+        width: 100%;
+      }
+    }
+    .content {
+      margin-left: 30px;
+      @include phone {
+        margin-left: 0;
+      }
+      font-size: 24px;
+      line-height: 3rem;
+      p {
+        margin-top: 30px;
+        font-size: 18px;
+        line-height: 2rem;
+      }
+    }
+    .content-hr {
+      width: 140px;
+      margin-top: 30px;
+      border: 1.5px solid #ad8e70;
+      @include phone {
+        width: 100%;
+      }
     }
   }
 }
