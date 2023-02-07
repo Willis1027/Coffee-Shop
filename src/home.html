@@ -37,7 +37,7 @@
             <li>
               <a href="#Contact">Contact</a>
             </li>
-            <li>
+            <li @click="shopcarShow" class="shopcar">
               <font-awesome-icon
                 icon="fa-solid fa-cart-shopping"
                 class="cart-shop-icon"
@@ -71,5 +71,108 @@
         </div>
       </div>
     </section>
+    <section class="menu" id="Menu">
+      <h1 class="heading">MENU</h1>
+      <div class="content">
+        <ul>
+          <li class="coffie-item" v-for="i in 6">
+            <img src="./image/menu-1.png" alt="" />
+            <p class="coffee-name">Classic Coffee Espresso</p>
+            <p class="coffee-price">$10</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="contact" id="Contact">
+      <h1 class="heading contact-heading">CONTACT</h1>
+      <div class="row">
+        <div class="contact-img">
+          <img src="./image/contact.png" alt="" />
+        </div>
+        <div class="contact-form">
+          <p>GET IN TOUCH</p>
+          <div class="contact-input">
+            <font-awesome-icon class="contact-icon" icon="fa-solid fa-user" />
+            <input class="contactInput" type="text" placeholder="name" />
+          </div>
+          <div class="contact-input">
+            <font-awesome-icon
+              class="contact-icon"
+              icon="fa-solid fa-envelope"
+            />
+            <input class="contactInput" type="text" placeholder="email" />
+          </div>
+          <div class="contact-input">
+            <font-awesome-icon
+              class="contact-icon"
+              icon="fa-solid fa-phone-flip"
+            />
+            <input class="contactInput" type="text" placeholder="phone" />
+          </div>
+          <div class="contact-submit">
+            <p>Send Message</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="box">
+        <img src="./image/footer-1.png" alt="" />
+        <p class="footer-title">Address</p>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima
+          incidunt alias sapiente voluptatem
+        </p>
+      </div>
+      <div class="box">
+        <img src="./image/footer-2.png" alt="" />
+        <p class="footer-title">E-mail</p>
+        <p>
+          <a href="mailto:favorite.ange@gmail.com">favorite.ange@gmail.com</a>
+        </p>
+      </div>
+      <div class="box">
+        <img src="./image/footer-3.png" alt="" />
+        <p class="footer-title">Call us</p>
+        <p>
+          0912345678
+        </p>
+      </div>
+      <div class="box">
+        <img src="./image/footer-4.png" alt="" />
+        <p class="footer-title">ddress</p>
+        <p>
+          Monday ~ Friday : 8:00 ~ 24:00
+        </p>
+        <p>
+          Saturday : 8:00 ~ 23:00
+        </p>
+      </div>
+    </footer>
+    <div class="shop-box" v-show="shopcarisShow">
+      <div class="shop-car">
+        <div class="clos-btn" @click="shopcarShow()">
+          <font-awesome-icon icon="fa-solid fa-x" />
+        </div>
+        <div class="content">
+          <table>
+            <tr>
+              <th>產品名稱</th>
+              <th>數量</th>
+              <th>單價</th>
+              <th>合計</th>
+              <th></th>
+            </tr>
+            <tr>
+              <td>星爆氣流咖啡</td>
+              <td>10</td>
+              <td>87</td>
+              <td>870</td>
+              <td>刪除</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

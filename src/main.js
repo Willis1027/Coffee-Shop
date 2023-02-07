@@ -15,9 +15,13 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faMugHot } from "@fortawesome/free-solid-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faPhoneFlip } from "@fortawesome/free-solid-svg-icons";
+import { faX } from "@fortawesome/free-solid-svg-icons";
 
 
 /* add icons to the library */
-library.add(faMugHot,faCartShopping,faBars);
+library.add(faMugHot,faCartShopping,faBars,faUser,faEnvelope,faPhoneFlip,faX);
 
 createApp(App).use(store).component("font-awesome-icon", FontAwesomeIcon).mount('#app')

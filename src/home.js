@@ -2,6 +2,7 @@ export default {
   data() {
     return {
       isshow: true,
+      shopcarisShow: false,
       rwdHeight: {
         height: "",
       },
@@ -32,5 +33,8 @@ export default {
         this.rwdHeight.height = "0px";
       }
     },
+    shopcarShow(){
+      this.shopcarisShow = !this.shopcarisShow;
+    }
   },
 };
