@@ -75,10 +75,21 @@
       <h1 class="heading">MENU</h1>
       <div class="content">
         <ul>
-          <li class="coffie-item" v-for="i in 6">
-            <img src="./image/menu-1.png" alt="" />
-            <p class="coffee-name">Classic Coffee Espresso</p>
-            <p class="coffee-price">$10</p>
+          <li class="coffie-item" v-for="i in coffieList">
+            <!-- <img src="./image/menu-1.png" alt=""> 原始路徑 -->
+            <img :src="require(`./image/${i.img}`)" />
+            <p class="coffee-name">{{i.name}}</p>
+            <p class="coffee-price">$ {{i.price}}</p>
+            <div class="itemNumber">
+              <p>數量</p>
+              <input type="number" min="0" v-model="i.value" />
+              <input
+                type="submit"
+                value="加入購物車"
+                class="addspbtn"
+                @click="addtoshopcar(i,$event)"
+              />
+            </div>
           </li>
         </ul>
       </div>
@@ -134,19 +145,13 @@
       <div class="box">
         <img src="./image/footer-3.png" alt="" />
         <p class="footer-title">Call us</p>
-        <p>
-          0912345678
-        </p>
+        <p>0912345678</p>
       </div>
       <div class="box">
         <img src="./image/footer-4.png" alt="" />
         <p class="footer-title">ddress</p>
-        <p>
-          Monday ~ Friday : 8:00 ~ 24:00
-        </p>
-        <p>
-          Saturday : 8:00 ~ 23:00
-        </p>
+        <p>Monday ~ Friday : 8:00 ~ 24:00</p>
+        <p>Saturday : 8:00 ~ 23:00</p>
       </div>
     </footer>
     <div class="shop-box" v-show="shopcarisShow">
@@ -163,14 +168,17 @@
               <th>合計</th>
               <th></th>
             </tr>
-            <tr>
-              <td>星爆氣流咖啡</td>
-              <td>10</td>
-              <td>87</td>
-              <td>870</td>
-              <td>刪除</td>
+            <tr v-for="(i,index) in shopcar">
+              <td>{{i.name}}</td>
+              <td>{{i.value}}</td>
+              <td>{{i.price}}</td>
+              <td>{{i.price*i.value}}</td>
+              <td @click="delshopitem(index)" class="delbtn">
+                <button>刪除</button>
+              </td>
             </tr>
           </table>
+          <div class="shopcarfooter"><h3>總價：</h3><h4>NT {{shopcartotal()}}</h4></div>
         </div>
       </div>
     </div>
