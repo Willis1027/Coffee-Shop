@@ -154,6 +154,7 @@
         <p>Saturday : 8:00 ~ 23:00</p>
       </div>
     </footer>
+    <transition>
     <div class="shop-box" v-show="shopcarisShow">
       <div class="shop-car">
         <div class="clos-btn" @click="shopcarShow()">
@@ -162,14 +163,19 @@
         <div class="content">
           <table>
             <tr>
-              <th>產品名稱</th>
+              <th class="itemName">產品名稱</th>
               <th>數量</th>
               <th>單價</th>
               <th>合計</th>
-              <th></th>
+              <th class="delbtn"></th>
             </tr>
             <tr v-for="(i,index) in shopcar">
-              <td>{{i.name}}</td>
+              <td class="shopcar-img">
+                <div class="shopcarImg">
+                  <img :src="require(`./image/${i.img}`)" />
+                </div>
+                <p>{{i.name}}</p>
+              </td>
               <td>{{i.value}}</td>
               <td>{{i.price}}</td>
               <td>{{i.price*i.value}}</td>
@@ -178,9 +184,13 @@
               </td>
             </tr>
           </table>
-          <div class="shopcarfooter"><h3>總價：</h3><h4>NT {{shopcartotal()}}</h4></div>
+          <div class="shopcarfooter">
+            <h3>總價：</h3>
+            <h4>NT {{shopcartotal()}}</h4>
+          </div>
         </div>
       </div>
     </div>
+  </transition>
   </body>
 </html>
