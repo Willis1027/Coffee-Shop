@@ -48,6 +48,7 @@ export default {
   methods: {
     show() {
       this.isshow = !this.isshow;
+      console.log(this.isshow);
       if (this.isshow === true) {
         this.rwdHeight.height = "200px";
       } else {
@@ -59,7 +60,12 @@ export default {
     },
     addtoshopcar(i) {
       // i為該商品的物件
-      this.shopcar.push(i);
+      if (i.value > 99) {
+        alert("商品數量最大為99");
+      } else {
+        this.shopcar.push({...i});
+        //將物件解構後新增
+      }
     },
     // 將商品新增至購物車
     delshopitem(index) {
@@ -67,12 +73,13 @@ export default {
     },
     //刪除購物車項目
     shopcartotal() {
-      let sum = 0
+      let sum = 0;
       this.shopcar.map(function (value) {
         sum += value.price * value.value;
       });
-      this.sum = sum
-      return this.sum
+      this.sum = sum;
+      return this.sum;
     },
+    //計算商品總價
   },
 };

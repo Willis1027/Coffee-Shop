@@ -82,7 +82,7 @@
             <p class="coffee-price">$ {{i.price}}</p>
             <div class="itemNumber">
               <p>數量</p>
-              <input type="number" min="0" v-model="i.value" />
+              <input type="number" min="0" max="99" v-model="i.value" />
               <input
                 type="submit"
                 value="加入購物車"
