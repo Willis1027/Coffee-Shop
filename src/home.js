@@ -60,11 +60,12 @@ export default {
     },
     addtoshopcar(i) {
       // i為該商品的物件
-      if (i.value > 99) {
-        alert("商品數量最大為99");
+      if (i.value > 99 || i.value === 0 || i.value === "") {
+        alert("請輸入正確商品數量(1~99)");
       } else {
-        this.shopcar.push({...i});
+        this.shopcar.push({ ...i });
         //將物件解構後新增
+        alert(`商品名稱：${i.name}\n數量:${i.value}\n以新增至購物車`);
       }
     },
     // 將商品新增至購物車
