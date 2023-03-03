@@ -2,6 +2,7 @@ export default {
   data() {
     return {
       isshow: true,
+      lightBox: false,
       shopcarisShow: false,
       rwdHeight: {
         height: "",
@@ -65,7 +66,9 @@ export default {
       } else {
         this.shopcar.push({ ...i });
         //將物件解構後新增
-        alert(`商品名稱：${i.name}\n數量:${i.value}\n以新增至購物車`);
+        // alert(`商品名稱：${i.name}\n數量:${i.value}\n以新增至購物車`);
+        this.lightBox = true;
+        //商品加入成功顯示燈罩
       }
     },
     // 將商品新增至購物車
@@ -82,5 +85,8 @@ export default {
       return this.sum;
     },
     //計算商品總價
+    closeLight() {
+      this.lightBox = false;
+    },
   },
 };

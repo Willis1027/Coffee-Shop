@@ -19,9 +19,10 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faPhoneFlip } from "@fortawesome/free-solid-svg-icons";
 import { faX } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 
 /* add icons to the library */
-library.add(faMugHot,faCartShopping,faBars,faUser,faEnvelope,faPhoneFlip,faX);
+library.add(faMugHot,faCartShopping,faBars,faUser,faEnvelope,faPhoneFlip,faX,faXmark);
 
 createApp(App).use(store).component("font-awesome-icon", FontAwesomeIcon).mount('#app')
