@@ -45,6 +45,17 @@ export default {
         this.rwdHeight.height = "0px";
       }
     };
+    const boxs = document.querySelectorAll('.box')
+    window.addEventListener('scroll', () => {
+      const triggerbottom = window.innerHeight + scrollY
+      boxs.forEach(box => {
+        if (triggerbottom > box.offsetTop + box.offsetHeight/4) {
+          box.classList.add('show')
+        } else {
+          box.classList.remove('show')
+        }
+      });
+    })
   },
   methods: {
     show() {

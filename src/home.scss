@@ -668,3 +668,16 @@ footer {
 .v-leave-from {
   opacity: 1;
 }
+
+// Scroll Loading
+
+.box{
+  opacity: 0;
+  transform: translateY(10%);
+  transition: all 1s ease;
+}
+
+.box.show{
+  opacity: 1;
+  transform: translateY(0);
+}
